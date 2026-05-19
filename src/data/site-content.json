@@ -1,0 +1,642 @@
+{
+  "hero": {
+    "name": "Albert Garcia, Jr.",
+    "title": "Creative production for growing businesses.",
+    "description": "Graphic design. Video editing. Photography. Videography. AI-powered workflows.",
+    "ctaText": "See the work",
+    "images": [
+      "/hero/1.jpg",
+      "/hero/2.jpg",
+      "/hero/3.jpg",
+      "/hero/4.jpg",
+      "/hero/5.jpg",
+      "/hero/6.jpg",
+      "/hero/7.jpg",
+      "/hero/8.jpg",
+      "/hero/9.jpg",
+      "/hero/10.jpg",
+      "/hero/11.jpg",
+      "/hero/12.jpg",
+      "/hero/13.jpg",
+      "/hero/14.jpg"
+    ]
+  },
+  "sections": [
+    {
+      "id": "social-media",
+      "title": "Social Media",
+      "intro": "Campaign rollouts, grid posts, stories, and social content for clients and personal projects."
+    },
+    {
+      "id": "branding",
+      "title": "Branding",
+      "intro": "Business and Brand logos. Mostly pro bono, always fun."
+    },
+    {
+      "id": "sports",
+      "title": "Sports",
+      "intro": "Sport fan. Fan art happens."
+    },
+    {
+      "id": "art-dump",
+      "title": "Art Dump",
+      "intro": "@rblt.dmp on Instagram. A personal project I started in 2021 after seeing Beeple's first 5000 days NFT. Random stuff made in spare time."
+    },
+    {
+      "id": "video-long",
+      "title": "Vides (Long Form)",
+      "intro": "Videos I've written, shot, edited, and sometimes narrated."
+    },
+    {
+      "id": "video-short",
+      "title": "Video (Short Form)",
+      "intro": "Shorter cuts. Mostly social media stuff, mix of client and personal."
+    },
+    {
+      "id": "photography",
+      "title": "Photography",
+      "intro": "Pitik. I've loved taking pictures for as long as I can remember."
+    }
+  ],
+  "socialMedia": [
+    {
+      "id": "sm-01",
+      "title": "Deep House Flow Event Poster",
+      "client": "Danni Pomplun",
+      "role": "Designer",
+      "imageSrc": "/social/1.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-02",
+      "title": "Reiki + Restore Event Promo",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/2.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-03",
+      "title": "Real Estate Call-to-Action Post",
+      "client": "Lauren Hutson",
+      "role": "Designer",
+      "imageSrc": "/social/3.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-04",
+      "title": "Tapsilog Menu Teaser",
+      "client": "Berto's Kusina",
+      "role": "Designer",
+      "imageSrc": "/social/4.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-05",
+      "title": "There's No Place Like Pola",
+      "client": "Local Politician",
+      "role": "Designer",
+      "imageSrc": "/social/5.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-06",
+      "title": "HAUM Wrapped 2024",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/6.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-07",
+      "title": "Yoga Nidra + Sound Healing Promo",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/7.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-08",
+      "title": "Kundalini Community Class Promo",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/8.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-09",
+      "title": "Mission Studio Weekly Schedule",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/9.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-10",
+      "title": "Just Listed: $150K Home Post",
+      "client": "Lauren Hutson",
+      "role": "Designer",
+      "imageSrc": "/social/10.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-11",
+      "title": "Real Estate Listing Sample",
+      "client": "Sample",
+      "role": "Designer",
+      "imageSrc": "/social/11.png",
+      "copyTier": "none"
+    },
+    {
+      "id": "sm-12",
+      "title": "Christine Cipra Instructor Spotlight",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/12.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-13",
+      "title": "Love Shine Play Festival Promo",
+      "client": "Danni Pomplun",
+      "role": "Designer",
+      "imageSrc": "/social/13.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-14",
+      "title": "There's No Place Like Pola",
+      "client": "Local Politician",
+      "role": "Designer",
+      "imageSrc": "/social/14.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-15",
+      "title": "COVID-19 Safety Tips Infographic",
+      "client": "Local Politician",
+      "role": "Designer",
+      "imageSrc": "/social/15.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-16",
+      "title": "Calm and Clear Workshop Promo",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/16.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-17",
+      "title": "Grand Opening Post",
+      "client": "Berto's Kusina",
+      "role": "Designer",
+      "imageSrc": "/social/17.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-18",
+      "title": "National Vaccination Days",
+      "client": "Local Politician",
+      "role": "Designer",
+      "imageSrc": "/social/18.png",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-19",
+      "title": "Lighten Your Heart Workshop Promo",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/19.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "sm-20",
+      "title": "Daybreaker Yoga + Sober Dance Party",
+      "client": "HAUM Studios",
+      "role": "Designer",
+      "imageSrc": "/social/20.png",
+      "copyTier": "light"
+    }
+  ],
+  "branding": [
+    {
+      "id": "gd-logo-1",
+      "title": "Logo and Branding",
+      "client": "Print+Play Internet Cafe",
+      "year": "2025",
+      "imageSrc": "/logos/1.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "gd-logo-2",
+      "title": "Logo and Wordmark",
+      "client": "Berto's Kusina",
+      "year": "2022",
+      "imageSrc": "/logos/2.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "gd-logo-3",
+      "title": "Logo",
+      "client": "Love. Bean. Around. Coffee",
+      "imageSrc": "/logos/3.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "gd-logo-4",
+      "title": "Logo and Shirt Design",
+      "client": "Agnus Dei Choir",
+      "imageSrc": "/logos/4.jpg",
+      "copyTier": "light"
+    },
+    {
+      "id": "gd-logo-5",
+      "title": "Logo",
+      "client": "Yujo Ramen",
+      "imageSrc": "/logos/5.jpg",
+      "copyTier": "light"
+    }
+  ],
+  "videoLong": [
+    {
+      "id": "vl-01",
+      "title": "Pro X Headset Review",
+      "client": "Personal Tech Review",
+      "role": "Host, Writer, Editor",
+      "imageSrc": "/long_thumb/pro-x.jpg",
+      "mediaType": "youtube",
+      "videoEmbed": "M1F4jPWysbA",
+      "copyTier": "full"
+    },
+    {
+      "id": "vl-02",
+      "title": "Historia Documentary",
+      "client": "Camareros",
+      "role": "Editor, Narrator",
+      "imageSrc": "/long_thumb/historia.jpg",
+      "mediaType": "youtube",
+      "videoEmbed": "-GlTBGec9rg",
+      "copyTier": "full"
+    },
+    {
+      "id": "vl-03",
+      "title": "Pola Adventures",
+      "client": "Personal Vlog",
+      "imageSrc": "/long_thumb/pola.jpg",
+      "mediaType": "youtube",
+      "videoEmbed": "VBDQRKruq7U",
+      "copyTier": "full"
+    },
+    {
+      "id": "vl-04",
+      "title": "Ingco Drill Review",
+      "client": "Personal Tech Review",
+      "role": "Editor",
+      "imageSrc": "/long_thumb/ingco.jpg",
+      "mediaType": "youtube",
+      "videoEmbed": "tJr2m6VyLYc",
+      "copyTier": "full"
+    },
+    {
+      "id": "vl-05",
+      "title": "Create Project Widget Feature",
+      "client": "Imagecloud.tv",
+      "role": "Editor, Voice-over",
+      "imageSrc": "/long_thumb/imagecloud.webp",
+      "mediaType": "youtube",
+      "videoEmbed": "oS9O_xgKtSw",
+      "copyTier": "full"
+    }
+  ],
+  "videoShort": [
+    {
+      "id": "vs-reel-1",
+      "title": "200HR Yoga Teacher Training Graduation",
+      "client": "HAUM Studios",
+      "role": "Video Editing",
+      "imageSrc": "/shorts/1.png",
+      "mediaType": "youtube",
+      "videoEmbed": "CnuDKImeVyk",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    },
+    {
+      "id": "vs-reel-2",
+      "title": "5 Common Home Selling Mistakes",
+      "client": "Lauren Hutson",
+      "role": "Script, Video Editing",
+      "imageSrc": "/shorts/2.png",
+      "mediaType": "youtube",
+      "videoEmbed": "4m7eqrTJKQI",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    },
+    {
+      "id": "vs-reel-3",
+      "title": "Old Photo Trend",
+      "client": "HAUM Studios",
+      "role": "Ideation, Video Editing",
+      "imageSrc": "/shorts/3.png",
+      "mediaType": "youtube",
+      "videoEmbed": "ACzmXkMK-NE",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    },
+    {
+      "id": "vs-reel-4",
+      "title": "Home Upgrades Under 3K",
+      "client": "Lauren Hutson",
+      "role": "AI Avatar, AI Voice, Animation",
+      "imageSrc": "/shorts/4.png",
+      "mediaType": "youtube",
+      "videoEmbed": "pHMy1C1qW5c",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    },
+    {
+      "id": "vs-reel-5",
+      "title": "Twister Fries is Back!",
+      "client": "Personal",
+      "imageSrc": "/shorts/5.png",
+      "mediaType": "youtube",
+      "videoEmbed": "5kox_oyUUNU",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    },
+    {
+      "id": "vs-reel-6",
+      "title": "Empire State Building Fun Facts",
+      "client": "Lauren Hutson",
+      "role": "Faceless, AI Voice",
+      "imageSrc": "/shorts/6.png",
+      "mediaType": "youtube",
+      "videoEmbed": "MSe57o3CYmE",
+      "aspectRatio": "portrait",
+      "copyTier": "light"
+    }
+  ],
+  "photography": [
+    {
+      "id": "ph-01",
+      "title": "Ely Buendia - Eraserheads Huling El Bimbo Concert",
+      "role": "Events",
+      "imageSrc": "/pitik/1.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-02",
+      "title": "Kamikazee - 20 Year Anniversary Concert",
+      "role": "Events",
+      "imageSrc": "/pitik/2.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-03",
+      "title": "Street Fashion",
+      "role": "Lifestyle",
+      "imageSrc": "/pitik/3.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-04",
+      "title": "Xbox Controller",
+      "role": "Product",
+      "imageSrc": "/pitik/4.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-05",
+      "title": "SK Night",
+      "role": "Events",
+      "imageSrc": "/pitik/5.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-06",
+      "title": "Parking",
+      "role": "Architecture",
+      "imageSrc": "/pitik/6.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-07",
+      "title": "Church Tower",
+      "role": "Architecture",
+      "imageSrc": "/pitik/7.jpg",
+      "copyTier": "none"
+    },
+    {
+      "id": "ph-08",
+      "title": "Patient Offense",
+      "role": "Sports",
+      "imageSrc": "/pitik/8.jpg",
+      "copyTier": "none"
+    }
+  ],
+  "artDump": [
+    {
+      "id": "ad-01",
+      "title": "Space Guy",
+      "year": "08-17-21",
+      "imageSrc": "/dump/1 08-17-21-space guy.jpg",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-02",
+      "title": "Brimstone",
+      "year": "09-20-21",
+      "imageSrc": "/dump/2 09-20-21-brimstone.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-03",
+      "title": "Gray-ish",
+      "year": "02-22-2023",
+      "imageSrc": "/dump/3 02-22-2023 gray-ish.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-04",
+      "title": "Mountain High",
+      "year": "08-22-21",
+      "imageSrc": "/dump/4 08-22-21-mountain high.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-05",
+      "title": "Baby Yoda",
+      "year": "09-21-21",
+      "imageSrc": "/dump/5 09-21-21-baby yoda.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-06",
+      "title": "Eye Popping",
+      "year": "08-21-21",
+      "imageSrc": "/dump/6 08-21-21-eye popping.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-07",
+      "title": "Astrohelm",
+      "year": "08-31-2022",
+      "imageSrc": "/dump/7 08-31-2022 astrohelm.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-08",
+      "title": "Mando",
+      "year": "02-27-23",
+      "imageSrc": "/dump/8 02-27-23 - mando.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-09",
+      "title": "Muse",
+      "year": "08-14-2022",
+      "imageSrc": "/dump/9 08-14-2022 muse.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-10",
+      "title": "Money Heist",
+      "year": "09-03-21",
+      "imageSrc": "/dump/10 09-03-21-money heist.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-11",
+      "title": "Curry",
+      "year": "09-23-21",
+      "imageSrc": "/dump/11 09-23-21curry.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "ad-12",
+      "title": "Black Panther",
+      "year": "11-11-2022",
+      "imageSrc": "/dump/12 11-11-2022 black panther.png",
+      "copyTier": "none",
+      "client": "Personal"
+    }
+  ],
+  "sports": [
+    {
+      "id": "sp-01",
+      "title": "Season End for Golden State",
+      "imageSrc": "/sports/1.jpg",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-02",
+      "title": "LeBron James becomes NBA's All Time Leadeing Scorer",
+      "imageSrc": "/sports/2.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-03",
+      "title": "Kobe Bryant Legacy",
+      "imageSrc": "/sports/3.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-04",
+      "title": "Stepen Curry scores 47",
+      "imageSrc": "/sports/4.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-05",
+      "title": "Golder State Warriors City Jerseys",
+      "imageSrc": "/sports/5.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-06",
+      "title": "Stephen Curry 3 Point Shot",
+      "imageSrc": "/sports/6.jpg",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-07",
+      "title": "Klay Thompson 41 Point Game",
+      "imageSrc": "/sports/7.png",
+      "copyTier": "none",
+      "client": "Personal"
+    },
+    {
+      "id": "sp-08",
+      "title": "Joel Embiid's 59/11/8/7 Game",
+      "imageSrc": "/sports/8.png",
+      "copyTier": "none",
+      "client": "Personal"
+    }
+  ],
+  "techMarketing": [
+    {
+      "label": "printplay.net",
+      "description": "Hardcoded site built with the help of AI tools.",
+      "href": "https://printplay.net"
+    },
+    {
+      "label": "haumstudios.com",
+      "description": "Major overhaul while I was Marketing Operations Manager for the brand.",
+      "href": "https://haumstudios.com"
+    },
+    {
+      "label": "dannipomplun.com",
+      "description": "Divi maintenance and upkeep for a yoga teacher brand.",
+      "href": "https://dannipomplun.com"
+    },
+    {
+      "label": "Sales campaigns + email sequences",
+      "description": "$100K+ generated per campaign for client work, designed end-to-end including newsletters, automated sequences, and ManyChat flows."
+    },
+    {
+      "label": "AI workflow design",
+      "description": "Setting up AI tools and prompts that actually save time on creative and ops work (and figuring out where they don't)."
+    }
+  ],
+  "about": {
+    "heading": "About",
+    "paragraphs": [
+      "Hey! I'm Albert (rebalt on the internet, though no one actually calls me that).",
+      "I help businesses with their creative production. Graphic design, video editing, photography, videography. I've been making this kind of stuff for as long as I can remember, mostly self-taught, because these are the things I've genuinely been interested in and passionate about since I was a kid.",
+      "I also run a few small businesses, which is how I ended up picking up marketing, automation, web development, and AI workflows along the way. I love figuring out where AI actually saves time on a creative job vs. where it just feels cool but wastes it.",
+      "Turns out the creative work and the operations work feed each other (designing a sales funnel is basically storyboarding with extra steps).",
+      "If you wanna chat, contact info's right below.",
+      "Cheers!"
+    ],
+    "imageSrc": "https://picsum.photos/seed/about-albert/800/1000",
+    "imageAlt": "Albert Garcia, Jr."
+  },
+  "contact": {
+    "heading": "Let's work together.",
+    "links": [
+      {
+        "label": "email",
+        "text": "albertrgarciajr@gmail.com",
+        "href": "mailto:albertrgarciajr@gmail.com"
+      }
+    ]
+  }
+}

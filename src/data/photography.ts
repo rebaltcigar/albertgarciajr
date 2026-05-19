@@ -1,0 +1,1 @@
+export { PHOTOGRAPHY } from "./content";
