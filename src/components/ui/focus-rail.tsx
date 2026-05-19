@@ -5,6 +5,7 @@ import { motion, AnimatePresence, PanInfo, Transition } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { SkeletonImg } from "@/components/ui/skeleton-img";
 
 export type FocusRailItem = {
   id: string | number;
@@ -220,10 +221,10 @@ export function FocusRail({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <SkeletonImg
               src={activeItem.imageSrc}
               alt=""
+              wrapperClassName="h-full w-full"
               className="h-full w-full object-cover blur-3xl saturate-200"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
@@ -296,9 +297,10 @@ export function FocusRail({
                     <MediaEmbed item={item} />
                   </div>
                 ) : (
-                  <img
+                  <SkeletonImg
                     src={item.imageSrc}
                     alt={item.title}
+                    wrapperClassName="h-full"
                     className={cn(
                       "h-full w-auto max-w-[85vw] md:max-w-[80vw] rounded-2xl object-contain bg-neutral-900 border-t border-white/20 pointer-events-none transition-shadow",
                       isCenter && "shadow-2xl shadow-black/50"

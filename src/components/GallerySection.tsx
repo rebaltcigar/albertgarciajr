@@ -14,6 +14,7 @@ import {
   CardHoverRevealMain,
 } from "@/components/ui/reveal-on-hover";
 import { Badge } from "@/components/ui/badge";
+import { SkeletonImg } from "@/components/ui/skeleton-img";
 
 export type WorkItem = {
   id: string;
@@ -89,11 +90,11 @@ export function GallerySection({
               >
                 <CardHoverRevealMain>
                   <div className="relative h-full">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <SkeletonImg
                       alt={item.title}
                       src={item.imageSrc}
                       loading="lazy"
+                      wrapperClassName="h-full"
                       className="h-full w-auto object-contain"
                     />
                     {/* Play icon overlay for media items */}

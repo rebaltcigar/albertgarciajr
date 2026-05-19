@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { SkeletonImg } from "@/components/ui/skeleton-img";
 
 interface AnimatedMarqueeHeroProps {
   tagline?: string;
@@ -138,10 +139,10 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 rotate: `${index % 2 === 0 ? -2 : 5}deg`,
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <SkeletonImg
                 src={src}
                 alt={`Showcase image ${index + 1}`}
+                wrapperClassName="w-full h-full"
                 className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
