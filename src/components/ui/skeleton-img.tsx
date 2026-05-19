@@ -19,7 +19,7 @@ export function SkeletonImg({ wrapperClassName, className, onLoad, ...props }: S
   }, []);
 
   return (
-    <div className={cn("relative", wrapperClassName)}>
+    <div className={cn("relative inline-block", wrapperClassName)}>
       {!loaded && (
         <div className="absolute inset-0 animate-pulse rounded-xl bg-neutral-800" />
       )}
