@@ -302,7 +302,7 @@ export function FocusRail({
                     alt={item.title}
                     wrapperClassName="h-full"
                     className={cn(
-                      "h-full w-auto max-w-[85vw] md:max-w-[80vw] rounded-2xl object-contain bg-neutral-900 border-t border-white/20 pointer-events-none transition-shadow",
+                      "h-full w-auto max-w-[85vw] md:max-w-[80vw] rounded-2xl object-contain border-t border-white/20 pointer-events-none transition-shadow",
                       isCenter && "shadow-2xl shadow-black/50"
                     )}
                   />
