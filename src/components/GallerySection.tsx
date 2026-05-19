@@ -14,7 +14,7 @@ import {
   CardHoverRevealMain,
 } from "@/components/ui/reveal-on-hover";
 import { Badge } from "@/components/ui/badge";
-import { SkeletonImg } from "@/components/ui/skeleton-img";
+import { useImagesLoaded } from "@/hooks/use-images-loaded";
 
 export type WorkItem = {
   id: string;
@@ -61,6 +61,8 @@ export function GallerySection({
   items,
   onItemClick,
 }: GallerySectionProps) {
+  const ready = useImagesLoaded(items.map((i) => i.imageSrc));
+
   return (
     <section id={id} className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
       <motion.div
@@ -82,7 +84,14 @@ export function GallerySection({
           <div className="pointer-events-none bg-[linear-gradient(270deg,_hsl(var(--background))_35%,_transparent)] w-[10vw] h-full absolute inset-[0_0_0_auto] z-10" />
 
           <DragCarouselWrap className="gap-6 py-4">
-            {items.map((item) => (
+            {!ready &&
+              items.map((item) => (
+                <div
+                  key={item.id}
+                  className="h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] aspect-[4/3] rounded-xl border border-border bg-neutral-900 overflow-hidden flex-shrink-0 snap-start animate-pulse"
+                />
+              ))}
+            {ready && items.map((item) => (
               <CardHoverReveal
                 key={item.id}
                 className="h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] w-max rounded-xl border border-border cursor-pointer group snap-start flex-shrink-0 bg-neutral-900 overflow-hidden"
@@ -90,11 +99,10 @@ export function GallerySection({
               >
                 <CardHoverRevealMain>
                   <div className="relative h-full">
-                    <SkeletonImg
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       alt={item.title}
                       src={item.imageSrc}
-                      loading="lazy"
-                      wrapperClassName="h-full"
                       className="h-full w-auto object-contain"
                     />
                     {/* Play icon overlay for media items */}

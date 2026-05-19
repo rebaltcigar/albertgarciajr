@@ -5,7 +5,7 @@ import { motion, AnimatePresence, PanInfo, Transition } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { SkeletonImg } from "@/components/ui/skeleton-img";
+import { useImagesLoaded } from "@/hooks/use-images-loaded";
 
 export type FocusRailItem = {
   id: string | number;
@@ -123,6 +123,7 @@ export function FocusRail({
   const [active, setActive] = React.useState(initialIndex);
   const [isHovering, setIsHovering] = React.useState(false);
   const lastWheelTime = React.useRef<number>(0);
+  const ready = useImagesLoaded(items.map((i) => i.imageSrc));
 
   React.useEffect(() => {
     setActive(initialIndex);
@@ -221,10 +222,10 @@ export function FocusRail({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <SkeletonImg
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={activeItem.imageSrc}
               alt=""
-              wrapperClassName="h-full w-full"
               className="h-full w-full object-cover blur-3xl saturate-200"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
@@ -234,8 +235,16 @@ export function FocusRail({
 
       {/* Main Stage */}
       <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
+        {!ready && (
+          <div className="relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center">
+            <div className="h-full aspect-[4/3] rounded-2xl bg-neutral-800 animate-pulse" />
+          </div>
+        )}
         <motion.div
-          className="relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing"
+          className={cn(
+            "relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing",
+            !ready && "hidden"
+          )}
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.2}
@@ -297,10 +306,10 @@ export function FocusRail({
                     <MediaEmbed item={item} />
                   </div>
                 ) : (
-                  <SkeletonImg
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
                     src={item.imageSrc}
                     alt={item.title}
-                    wrapperClassName="h-full"
                     className={cn(
                       "h-full w-auto max-w-[85vw] md:max-w-[80vw] rounded-2xl object-contain border-t border-white/20 pointer-events-none transition-shadow",
                       isCenter && "shadow-2xl shadow-black/50"
