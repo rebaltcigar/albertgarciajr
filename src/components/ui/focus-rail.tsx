@@ -235,7 +235,7 @@ export function FocusRail({
       {/* Main Stage */}
       <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
         <motion.div
-          className="relative mx-auto flex h-[65vh] min-h-[480px] md:min-h-0 md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing"
+          className="relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.2}
