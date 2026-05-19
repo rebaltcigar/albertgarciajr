@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { SkeletonImg } from "@/components/ui/skeleton-img";
 
 interface AnimatedMarqueeHeroProps {
   tagline?: string;
@@ -139,11 +139,13 @@ export const AnimatedMarqueeHero: React.FC<AnimatedMarqueeHeroProps> = ({
                 rotate: `${index % 2 === 0 ? -2 : 5}deg`,
               }}
             >
-              <SkeletonImg
+              <Image
                 src={src}
-                alt={`Showcase image ${index + 1}`}
-                wrapperClassName="w-full h-full"
-                className="w-full h-full object-cover rounded-2xl shadow-md"
+                alt=""
+                fill
+                sizes="(min-width: 768px) 192px, 108px"
+                priority={index < 4}
+                className="object-cover rounded-2xl shadow-md"
               />
             </div>
           ))}

@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, PanInfo, Transition } from "framer-motion";
 import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { useImagesLoaded } from "@/hooks/use-images-loaded";
+import { getImageMeta } from "@/lib/image-meta";
 
 export type FocusRailItem = {
   id: string | number;
@@ -64,8 +65,8 @@ function MediaEmbed({ item }: { item: FocusRailItem }) {
         allow="autoplay; fullscreen; picture-in-picture"
         className={cn(
           "rounded-2xl bg-black pointer-events-auto shadow-xl border-t border-white/20",
-          isPortrait 
-            ? "h-full w-auto max-w-[85vw]" 
+          isPortrait
+            ? "h-full w-auto max-w-[85vw]"
             : "w-[90vw] md:w-[60vw] max-w-[900px] h-auto max-h-full"
         )}
         style={{ aspectRatio: isPortrait ? "9/16" : "16/9" }}
@@ -121,13 +122,14 @@ export function FocusRail({
   className,
 }: FocusRailProps) {
   const [active, setActive] = React.useState(initialIndex);
+  const [prevInitial, setPrevInitial] = React.useState(initialIndex);
   const [isHovering, setIsHovering] = React.useState(false);
   const lastWheelTime = React.useRef<number>(0);
-  const ready = useImagesLoaded(items.map((i) => i.imageSrc));
 
-  React.useEffect(() => {
+  if (initialIndex !== prevInitial) {
+    setPrevInitial(initialIndex);
     setActive(initialIndex);
-  }, [initialIndex]);
+  }
 
   const count = items.length;
   const activeIndex = count > 0 ? wrap(0, count, active) : 0;
@@ -197,8 +199,6 @@ export function FocusRail({
     return null;
   }
 
-  const mediaAvailable = hasMedia(activeItem);
-
   return (
     <div
       className={cn(
@@ -211,7 +211,7 @@ export function FocusRail({
       onKeyDown={onKeyDown}
       onWheel={onWheel}
     >
-      {/* Background Ambience */}
+      {/* Background Ambience — tiny low-quality copy, blurred to invisibility */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <AnimatePresence mode="popLayout">
           <motion.div
@@ -222,11 +222,13 @@ export function FocusRail({
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={activeItem.imageSrc}
               alt=""
-              className="h-full w-full object-cover blur-3xl saturate-200"
+              fill
+              sizes="64px"
+              quality={40}
+              className="object-cover blur-3xl saturate-200"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent" />
           </motion.div>
@@ -235,16 +237,8 @@ export function FocusRail({
 
       {/* Main Stage */}
       <div className="relative z-10 flex flex-1 flex-col justify-center px-4 md:px-8">
-        {!ready && (
-          <div className="relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center">
-            <div className="h-full aspect-[4/3] rounded-2xl bg-neutral-800 animate-pulse" />
-          </div>
-        )}
         <motion.div
-          className={cn(
-            "relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing",
-            !ready && "hidden"
-          )}
+          className="relative mx-auto flex h-[85vw] max-h-[65vh] md:max-h-none md:h-[70vh] w-full max-w-6xl items-center justify-center [perspective:1200px] cursor-grab active:cursor-grabbing"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.2}
@@ -267,6 +261,8 @@ export function FocusRail({
             const opacity = isCenter ? 1 : Math.max(0.1, 1 - dist * 0.5);
             const blur = isCenter ? 0 : dist * 6;
             const brightness = isCenter ? 1 : 0.5;
+
+            const meta = getImageMeta(item.imageSrc);
 
             return (
               <motion.div
@@ -306,10 +302,15 @@ export function FocusRail({
                     <MediaEmbed item={item} />
                   </div>
                 ) : (
-                  /* eslint-disable-next-line @next/next/no-img-element */
-                  <img
+                  <Image
                     src={item.imageSrc}
                     alt={item.title}
+                    width={meta.w}
+                    height={meta.h}
+                    sizes={isCenter
+                      ? "(min-width: 1024px) 1200px, (min-width: 768px) 900px, 85vw"
+                      : "(min-width: 1024px) 900px, (min-width: 768px) 700px, 70vw"}
+                    priority={isCenter}
                     className={cn(
                       "h-full w-auto max-w-[85vw] md:max-w-[80vw] rounded-2xl object-contain border-t border-white/20 pointer-events-none transition-shadow",
                       isCenter && "shadow-2xl shadow-black/50"

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
 import {
@@ -14,7 +15,7 @@ import {
   CardHoverRevealMain,
 } from "@/components/ui/reveal-on-hover";
 import { Badge } from "@/components/ui/badge";
-import { useImagesLoaded } from "@/hooks/use-images-loaded";
+import { getImageMeta } from "@/lib/image-meta";
 
 export type WorkItem = {
   id: string;
@@ -61,8 +62,6 @@ export function GallerySection({
   items,
   onItemClick,
 }: GallerySectionProps) {
-  const ready = useImagesLoaded(items.map((i) => i.imageSrc));
-
   return (
     <section id={id} className="py-16 md:py-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
       <motion.div
@@ -84,66 +83,65 @@ export function GallerySection({
           <div className="pointer-events-none bg-[linear-gradient(270deg,_hsl(var(--background))_35%,_transparent)] w-[10vw] h-full absolute inset-[0_0_0_auto] z-10" />
 
           <DragCarouselWrap className="gap-6 py-4">
-            {!ready &&
-              items.map((item) => (
-                <div
+            {items.map((item, idx) => {
+              const meta = getImageMeta(item.imageSrc);
+              return (
+                <CardHoverReveal
                   key={item.id}
-                  className="h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] aspect-[4/3] rounded-xl border border-border bg-neutral-900 overflow-hidden flex-shrink-0 snap-start animate-pulse"
-                />
-              ))}
-            {ready && items.map((item) => (
-              <CardHoverReveal
-                key={item.id}
-                className="h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] w-max rounded-xl border border-border cursor-pointer group snap-start flex-shrink-0 bg-neutral-900 overflow-hidden"
-                onClick={() => onItemClick(item, items)}
-              >
-                <CardHoverRevealMain>
-                  <div className="relative h-full">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      alt={item.title}
-                      src={item.imageSrc}
-                      className="h-full w-auto object-contain"
-                    />
-                    {/* Play icon overlay for media items */}
-                    {hasMedia(item) && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="rounded-full bg-black/50 backdrop-blur-sm p-3 ring-1 ring-white/20">
-                          <Play className="h-6 w-6 text-white fill-white" />
+                  className="h-[240px] sm:h-[280px] md:h-[320px] lg:h-[360px] w-max rounded-xl border border-border cursor-pointer group snap-start flex-shrink-0 bg-neutral-900 overflow-hidden"
+                  onClick={() => onItemClick(item, items)}
+                >
+                  <CardHoverRevealMain>
+                    <div className="relative h-full">
+                      <Image
+                        alt={item.title}
+                        src={item.imageSrc}
+                        width={meta.w}
+                        height={meta.h}
+                        sizes="(min-width: 1024px) 640px, (min-width: 768px) 480px, 360px"
+                        priority={idx === 0}
+                        className="h-full w-auto object-contain"
+                      />
+                      {/* Play icon overlay for media items */}
+                      {hasMedia(item) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="rounded-full bg-black/50 backdrop-blur-sm p-3 ring-1 ring-white/20">
+                            <Play className="h-6 w-6 text-white fill-white" />
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                </CardHoverRevealMain>
-                {item.copyTier !== "none" && (
-                  <CardHoverRevealContent className="space-y-3 rounded-2xl bg-black/60 backdrop-blur-xl p-5">
-                    {(item.client || item.year) && (
-                      <div className="flex flex-wrap gap-2">
-                        {item.client && (
-                          <Badge className="rounded-full bg-red-500/90 hover:bg-red-500">
-                            {item.client}
-                          </Badge>
-                        )}
-                        {item.year && (
-                          <Badge
-                            variant="secondary"
-                            className="rounded-full font-mono"
-                          >
-                            {item.year}
-                          </Badge>
-                        )}
-                      </div>
-                    )}
-                    <div className="space-y-1">
-                      <h3 className="text-white font-medium">{item.title}</h3>
-                      {item.role && (
-                        <p className="text-white/70 text-sm">{item.role}</p>
                       )}
                     </div>
-                  </CardHoverRevealContent>
-                )}
-              </CardHoverReveal>
-            ))}
+                  </CardHoverRevealMain>
+                  {item.copyTier !== "none" && (
+                    <CardHoverRevealContent className="space-y-3 rounded-2xl bg-black/60 backdrop-blur-xl p-5">
+                      {(item.client || item.year) && (
+                        <div className="flex flex-wrap gap-2">
+                          {item.client && (
+                            <Badge className="rounded-full bg-red-500/90 hover:bg-red-500">
+                              {item.client}
+                            </Badge>
+                          )}
+                          {item.year && (
+                            <Badge
+                              variant="secondary"
+                              className="rounded-full font-mono"
+                            >
+                              {item.year}
+                            </Badge>
+                          )}
+                        </div>
+                      )}
+                      <div className="space-y-1">
+                        <h3 className="text-white font-medium">{item.title}</h3>
+                        {item.role && (
+                          <p className="text-white/70 text-sm">{item.role}</p>
+                        )}
+                      </div>
+                    </CardHoverRevealContent>
+                  )}
+                </CardHoverReveal>
+              );
+            })}
           </DragCarouselWrap>
 
           <DragCarouselProgress
